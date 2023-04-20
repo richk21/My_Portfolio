@@ -1,0 +1,8 @@
+things to add:
+1. remove testimonials -DONE
+2. add linkedIn, Instagram, Email IDs
+3. add my own skills (langauges and softwares)
+4. add my own projects
+5. email part should work
+
+thats a wrap!
