@@ -24,7 +24,9 @@
     "react-parallax-tilt": "^1.7.129",
     "react-router-dom": "^6.10.0",
     "react-tilt": "^1.0.2",
-    "react-vertical-timeline-component": "^3.6.0"
+    "react-vertical-timeline-component": "^3.6.0",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
