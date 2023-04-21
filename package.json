@@ -5,8 +5,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy" : "npm run build",
-    "deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -17,6 +17,7 @@
     "@react-three/drei": "^9.65.3",
     "@react-three/fiber": "^8.12.1",
     "framer-motion": "^10.12.4",
+    "gh-pages-auto-release": "^1.1.369",
     "maath": "^0.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
