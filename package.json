@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy" : "npm run build",
+    "predeploy": "npm run build",
     "deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages",
     "dev": "vite",
     "build": "vite build",
@@ -30,6 +30,8 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.1",
     "gh-pages": "^5.0.0",
     "postcss": "^8.4.22",
     "tailwindcss": "^3.3.1",
