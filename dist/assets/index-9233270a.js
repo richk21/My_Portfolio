@@ -40647,7 +40647,6 @@ const D5 = Object.freeze(
       ZeroSlopeEnding: Ha,
       ZeroStencilOp: jN,
       _SRGBAFormat: Qm,
-      sRGBEncoding: Tt,
     },
     Symbol.toStringTag,
     { value: "Module" }
