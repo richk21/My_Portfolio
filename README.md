@@ -1,4 +1,4 @@
-# My_Portfolio
+# My Portfolio
 
 Welcome to my Portfolio!
 This portfolio website showcases my projects, experience and skillset. This website has been made using ThreeJS(3D Graphics Library on), Framer Motion for the animations and transitions in React and TailwindCSS(CSS Styling framework).
