@@ -13,7 +13,7 @@ jobs:
 
       # Build your static site here (adjust as needed)
       - name: Build site
-        run: echo "Add your build steps here"
+        run: echo "npm run build"
 
       # Upload build artifacts
       - name: Upload artifact
