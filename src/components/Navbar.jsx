@@ -25,6 +25,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLinkActiveLogic = (title) => {
+    if (title.toLowerCase() !== "resume") {
+      setActive(title);
+    }
+  };
+
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 ${
@@ -52,8 +58,14 @@ const Navbar = () => {
               className={`${
                 active === nav.title ? "text-white" : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}>
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              onClick={() => handleLinkActiveLogic(nav.title)}>
+              {nav.title.toLowerCase() === "resume" ? (
+                <a href='/resume.pdf' target='_blank' rel='noopener noreferrer'>
+                  {nav.title}
+                </a>
+              ) : (
+                <a href={`#${nav.id}`}>{nav.title}</a>
+              )}
             </li>
           ))}
         </ul>
