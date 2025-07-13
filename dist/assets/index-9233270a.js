@@ -53871,7 +53871,7 @@ const p3 = () => {
     });
   },
   V9 = () => {
-    const n = GA("./assets/scene.gltf");
+    const n = GA("./planet/scene.gltf");
     return ce("primitive", {
       object: n.scene,
       scale: 2.5,
