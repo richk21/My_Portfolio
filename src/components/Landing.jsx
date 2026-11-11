@@ -7,6 +7,19 @@ import { styles } from "../styles";
 const Landing = () => {
   return (
     <section className='relative w-full h-screen mx-auto flex items-center overflow-hidden'>
+      {/* soft dot-grid texture, fading toward the edges, replaces the old swirl background image */}
+      <div
+        className='absolute inset-0 z-0 opacity-50'
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(255,255,255,0.09) 1px, transparent 1px)",
+          backgroundSize: "26px 26px",
+          maskImage:
+            "radial-gradient(ellipse 70% 60% at 50% 40%, black 0%, transparent 75%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 70% 60% at 50% 40%, black 0%, transparent 75%)",
+        }}
+      />
       <div
         className={`relative z-10 w-full max-w-7xl mx-auto ${styles.paddingX} flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8 mt-16`}>
         <motion.div
