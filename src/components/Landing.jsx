@@ -93,25 +93,11 @@ const Landing = () => {
             </span>
           </div>
 
-          <Tilt
-            className='relative'
-            tiltMaxAngleX={12}
-            tiltMaxAngleY={12}
-            glareEnable
-            glareMaxOpacity={0.2}
-            glareColor='#8F88FF'
-            glareBorderRadius='24px'>
-            <div className='green-black-gradient p-[4px] rounded-[24px] shadow-card'>
-              <img
-                src={profilepic}
-                alt='Richa Kiran'
-                className='w-[230px] h-[230px] xs:w-[280px] xs:h-[280px] object-cover rounded-[22px] bg-tertiary'
-              />
-            </div>
-          </Tilt>
-
+          {/* small overlap onto the photo's corner only — kept intentionally
+             minimal so it reads as a tucked-in badge rather than sitting on
+             top of her face */}
           {currentRole && (
-            <div className='absolute -bottom-6 -left-8 z-20 glass-card pl-3 pr-4 py-2.5 flex items-center gap-3 shadow-glow-sm'>
+            <div className='absolute -bottom-12 -left-10 z-20 glass-card pl-3 pr-4 py-2.5 flex items-center gap-3 shadow-glow-sm max-w-[210px]'>
               <div className='w-9 h-9 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden'>
                 <img
                   src={currentRole.icon}
@@ -129,6 +115,23 @@ const Landing = () => {
               </div>
             </div>
           )}
+
+          <Tilt
+            className='relative z-10'
+            tiltMaxAngleX={12}
+            tiltMaxAngleY={12}
+            glareEnable
+            glareMaxOpacity={0.2}
+            glareColor='#8F88FF'
+            glareBorderRadius='24px'>
+            <div className='green-black-gradient p-[4px] rounded-[24px] shadow-card'>
+              <img
+                src={profilepic}
+                alt='Richa Kiran'
+                className='w-[230px] h-[230px] xs:w-[280px] xs:h-[280px] object-cover rounded-[22px] bg-tertiary'
+              />
+            </div>
+          </Tilt>
         </motion.div>
       </div>
 
