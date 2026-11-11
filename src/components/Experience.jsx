@@ -15,11 +15,16 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#224B52",
+        background: "rgba(17, 21, 51, 0.85)",
         color: "#fff",
+        border: "1px solid rgba(255,255,255,0.08)",
+        boxShadow: "0 25px 60px -20px rgba(6,8,24,0.7)",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{
+        borderRight: "7px solid rgba(17, 21, 51, 0.85)",
+      }}
       date={experience.date}
+      dateClassName='text-secondary'
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
@@ -32,9 +37,11 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
+        <h3 className='text-white text-[22px] font-heading font-semibold'>
+          {experience.title}
+        </h3>
         <p
-          className='text-secondary text-[16px] font-semibold'
+          className='text-accent-2 text-[16px] font-medium'
           style={{ margin: 0 }}
         >
           {experience.company_name}
@@ -45,7 +52,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
+            className='text-white-100 text-[14px] pl-1 tracking-wide leading-[22px]'
           >
             {point}
           </li>
@@ -68,7 +75,7 @@ const Experience = () => {
       </motion.div>
 
       <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
+        <VerticalTimeline lineColor='rgba(255,255,255,0.08)'>
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}

@@ -22,3 +22,6 @@ LINT NOTES.txt
 *.njsproj
 *.sln
 *.sw?
+_design_backup_*/
+_to_delete/
+dist_preview*

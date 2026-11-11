@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
-import { github } from "../assets";
+import { github, link } from "../assets";
 import { projects } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
@@ -14,27 +14,40 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  live_demo_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", index * 0.4, 0.75)}>
       <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'>
-        <div className='relative w-full h-[230px]'>
+        tiltMaxAngleX={8}
+        tiltMaxAngleY={8}
+        scale={1.01}
+        transitionSpeed={450}
+        className='glass-card p-5 sm:w-[360px] w-full'>
+        <div className='relative w-full h-[220px]'>
           <img
             src={image}
-            alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
+            alt={name}
+            className='w-full h-full object-cover rounded-xl'
           />
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
+          <div className='absolute inset-0 flex justify-end items-start gap-2 m-3'>
+            {live_demo_link && (
+              <div
+                onClick={() => window.open(live_demo_link, "_blank")}
+                title='Live demo'
+                className='black-gradient border border-white/10 w-9 h-9 rounded-full flex justify-center items-center cursor-pointer hover:border-accent-2/60 transition-colors'>
+                <img
+                  src={link}
+                  alt='live demo'
+                  className='w-1/2 h-1/2 object-contain'
+                />
+              </div>
+            )}
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'>
+              title='Source code'
+              className='black-gradient border border-white/10 w-9 h-9 rounded-full flex justify-center items-center cursor-pointer hover:border-accent/60 transition-colors'>
               <img
                 src={github}
                 alt='source code'
@@ -45,17 +58,21 @@ const ProjectCard = ({
         </div>
 
         <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+          <h3 className='text-white font-heading font-semibold text-[20px]'>
+            {name}
+          </h3>
+          <p className='mt-2 text-secondary text-[14px] leading-[22px]'>
+            {description}
+          </p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
-            <p
+            <span
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}>
+              className={`tag-chip ${tag.color}`}>
               #{tag.name}
-            </p>
+            </span>
           ))}
         </div>
       </Tilt>
@@ -83,7 +100,7 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
+      <div className='mt-16 flex flex-wrap gap-7'>
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

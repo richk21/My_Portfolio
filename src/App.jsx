@@ -17,7 +17,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center bg-fit linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1))'>
+        {/* ambient background glow — purely decorative, sits behind every section */}
+        <div className='fixed inset-0 z-0 overflow-hidden pointer-events-none'>
+          <div className='absolute -top-40 -left-32 w-[32rem] h-[32rem] rounded-full bg-accent/20 blur-[120px]' />
+          <div className='absolute top-1/3 -right-40 w-[28rem] h-[28rem] rounded-full bg-accent-2/15 blur-[130px]' />
+          <div className='absolute bottom-0 left-1/4 w-[24rem] h-[24rem] rounded-full bg-accent/10 blur-[110px]' />
+        </div>
+
+        <div className='relative'>
           <Navbar />
           <Landing />
         </div>

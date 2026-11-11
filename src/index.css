@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap");
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 @tailwind base;
 @tailwind components;
@@ -8,9 +8,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
+}
+
+body {
+  background-color: #060818;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Sora", sans-serif;
 }
 
 .hash-span {
@@ -19,108 +30,182 @@
   display: block;
 }
 
+/* ---------- solid / translucent gradients used as backgrounds (buttons, panels, borders) ---------- */
+
 .black-gradient {
-  background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #434343,
-    #000000
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #0a0d22;
+  background: linear-gradient(135deg, #151a3d 0%, #080a1c 100%);
 }
 
 .violet-gradient {
-  background: #804dee;
-  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(
-    -90deg,
-    #804dee 0%,
-    rgba(60, 51, 80, 0) 100%
-  );
+  background: #6c63ff;
+  background: linear-gradient(-90deg, #6c63ff 0%, rgba(17, 21, 51, 0) 100%);
 }
 
 .green-black-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #08aaad 1.9%, #0c2424 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #08aaad 1.9%, #0c2424 97.5%);
+  /* Repurposed as the signature accent ring around the hero photo */
+  background: linear-gradient(135deg, #6c63ff 0%, #38bdf8 100%);
 }
 
 .green-pink-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-}
-.pink-green-gradient {
-  background: "#00cea8";
-  background: linear-gradient(90.13deg, #bf61ff 1.9%, #00cea8 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #bf61ff 1.9%, #00cea8 97.5%);
+  background: linear-gradient(
+    135deg,
+    rgba(108, 99, 255, 0.85) 0%,
+    rgba(56, 189, 248, 0.85) 100%
+  );
 }
 
-.orange-text-gradient {
-  background: #f12711; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #f12711,
-    #f5af19
-  ); /* Chrome 10-25, Safari 5.1-6 */
+.pink-green-gradient {
   background: linear-gradient(
-    to top,
-    #f12711,
-    #f5af19
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    135deg,
+    rgba(108, 99, 255, 0.85) 0%,
+    rgba(56, 189, 248, 0.85) 100%
+  );
+}
+
+/* ---------- shared design-system utilities ---------- */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 1.25rem;
+  transition: transform 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(108, 99, 255, 0.45);
+  box-shadow: 0 25px 60px -20px rgba(6, 8, 24, 0.7),
+    0 0 40px -12px rgba(108, 99, 255, 0.35);
+}
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #38bdf8;
+}
+
+.section-kicker::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #6c63ff, #38bdf8);
+  display: inline-block;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6c63ff 0%, #38bdf8 100%);
+  box-shadow: 0 0 22px -6px rgba(108, 99, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 45px -8px rgba(108, 99, 255, 0.45);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease,
+    background 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-outline:hover {
+  transform: translateY(-3px);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.tag-chip {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.field-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 0.85rem;
+  padding: 1rem 1.3rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.field-input::placeholder {
+  color: #9aa4c7;
+}
+
+.field-input:focus {
+  border-color: #6c63ff;
+  background: rgba(108, 99, 255, 0.06);
+}
+
+/* ---------- gradient text (tag colors) — declared after .tag-chip so the
+   gradient background + clip always wins over the chip's own background ---------- */
+
+.orange-text-gradient {
+  background: linear-gradient(to top, #f59e0b, #fbbf24);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .green-text-gradient {
-  background: #11998e; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #11998e,
-    #38ef7d
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #11998e,
-    #38ef7d
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to top, #10b981, #34d399);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .blue-text-gradient {
-  /* background: -webkit-linear-gradient(#eee, #333); */
-  background: #56ccf2; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #2f80ed,
-    #56ccf2
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #2f80ed,
-    #56ccf2
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to top, #6c63ff, #38bdf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .pink-text-gradient {
-  background: #ec008c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #ec008c,
-    #fc6767
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #ec008c,
-    #fc6767
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to top, #ec4899, #f472b6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -138,16 +223,14 @@
 }
 
 .overflow-x-scroll::-webkit-scrollbar {
+  height: 6px;
   width: 100px;
   background-color: transparent;
 }
 
 .overflow-x-scroll::-webkit-scrollbar-thumb {
-  background-color: #09292f;
+  background-color: rgba(108, 99, 255, 0.45);
   border-radius: 20px;
-}
-
-.overflow-x-scroll::-webkit-scrollbar-thumb {
   visibility: hidden;
 }
 
@@ -246,4 +329,15 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7),
       -1.8em -1.8em 0 0em #ffffff;
   }
+}
+
+/* react-vertical-timeline-component overrides to match the new palette */
+.vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.2),
+    0 8px 20px -6px rgba(6, 8, 24, 0.6) !important;
+}
+
+.vertical-timeline-element-date {
+  color: #9aa4c7 !important;
+  opacity: 1 !important;
 }

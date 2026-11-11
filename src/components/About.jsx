@@ -7,25 +7,26 @@ import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon, link }) => (
-  <Tilt className='xs:w-[250px] w-full'>
+  <Tilt
+    tiltMaxAngleX={10}
+    tiltMaxAngleY={10}
+    scale={1.02}
+    transitionSpeed={450}
+    className='w-full'>
     <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full pink-green-gradient p-[1px] rounded-[20px] shadow-card'>
-      <a href={link}>
-        <div
-          options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}
-          className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'>
-          <img
-            src={icon}
-            alt='web-development'
-            className='w-16 h-16 object-contain'
-          />
+      variants={fadeIn("right", "spring", index * 0.4, 0.75)}
+      className='w-full pink-green-gradient p-[1.5px] rounded-2xl shadow-card'>
+      <a href={link} target='_blank' rel='noopener noreferrer'>
+        <div className='bg-tertiary/90 glass-card rounded-2xl py-8 px-6 min-h-[220px] flex flex-col justify-center items-center gap-5 text-center'>
+          <div className='w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center'>
+            <img
+              src={icon}
+              alt={title}
+              className='w-9 h-9 object-contain'
+            />
+          </div>
 
-          <h3 className='text-white text-[20px] font-bold text-center'>
+          <h3 className='text-white text-[18px] font-heading font-semibold'>
             {title}
           </h3>
         </div>
@@ -53,7 +54,7 @@ const About = () => {
         power of diverse tech stacks.
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

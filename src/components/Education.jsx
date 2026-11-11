@@ -9,21 +9,24 @@ import { textVariant } from "../utils/motion";
 
 const EducationCard = ({ education }) => {
   return (
-    <div className='bg-tertiary p-5 rounded-2xl w-full'>
-      <div class='flex flex-row'>
-        <img
-          src={education.icon}
-          alt={education.school}
-          className='w-[5%] h-[5%] object-contain mr-4'
-        />
-        <div>
-          <h3 className='text-white text-[24px] font-bold'>
-            {education.field}
+    <div className='glass-card p-6 w-full'>
+      <div className='flex flex-row items-start gap-4'>
+        <div className='w-14 h-14 flex-shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center'>
+          <img
+            src={education.icon}
+            alt={education.school}
+            className='w-8 h-8 object-contain'
+          />
+        </div>
+        <div className='flex-1'>
+          <h3 className='text-white text-[20px] font-heading font-semibold'>
+            {education.school}
           </h3>
-          <p
-            className='text-secondary text-[16px] font-semibold'
-            style={{ margin: 0 }}>
+          <p className='mt-1 text-accent-2 text-[15px] font-medium'>
             {education.field}
+          </p>
+          <p className='mt-1 text-secondary text-[13px]'>
+            {education.graddDate} &middot; {education.location}
           </p>
         </div>
       </div>
@@ -32,7 +35,7 @@ const EducationCard = ({ education }) => {
         {education.points.map((point, index) => (
           <li
             key={`education-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'>
+            className='text-white-100 text-[14px] pl-1 tracking-wide leading-[22px]'>
             {point}
           </li>
         ))}
@@ -52,11 +55,9 @@ const Education = () => {
           Academic Milestones.
         </h2>
       </motion.div>
-      <div className='mt-10 flex flex-col'>
+      <div className='mt-10 flex flex-col gap-6'>
         {education.map((school, index) => (
-          <div className='mt-10' key={`education-${index}`}>
-            <EducationCard key={`education-${index}`} education={school} />
-          </div>
+          <EducationCard key={`education-${index}`} education={school} />
         ))}
       </div>
     </>
