@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 import Tilt from "react-parallax-tilt";
-import profilepic from "../assets/profile.jpeg";
+import profilepic from "../assets/profile.jpg";
 import { styles } from "../styles";
 
 const Landing = () => {
