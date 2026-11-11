@@ -3,10 +3,24 @@ import Tilt from "react-parallax-tilt";
 
 import profilepic from "../assets/profile.jpg";
 import { styles } from "../styles";
+import {
+  certifications,
+  experiences,
+  projects,
+  technologies,
+} from "../constants";
+
+const stats = [
+  { value: projects.length, label: "Projects" },
+  { value: technologies.length, label: "Technologies" },
+  { value: certifications.length, label: "Certifications" },
+];
+
+const currentRole = experiences[0];
 
 const Landing = () => {
   return (
-    <section className='relative w-full h-screen mx-auto flex items-center overflow-hidden'>
+    <section className='relative w-full min-h-screen mx-auto flex items-center overflow-hidden py-28 lg:py-16'>
       {/* soft dot-grid texture, fading toward the edges, replaces the old swirl background image */}
       <div
         className='absolute inset-0 z-0 opacity-50'
@@ -49,6 +63,19 @@ const Landing = () => {
               Download Resume
             </a>
           </div>
+
+          <div className='mt-12 w-full flex flex-wrap items-center gap-x-10 gap-y-6 pt-7 border-t border-white/10'>
+            {stats.map((stat) => (
+              <div key={stat.label} className='flex flex-col'>
+                <span className='font-heading font-bold text-white text-[28px] leading-none'>
+                  {stat.value}
+                </span>
+                <span className='mt-1.5 text-secondary text-[12px] uppercase tracking-wider'>
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div
@@ -57,6 +84,15 @@ const Landing = () => {
           transition={{ duration: 0.7, delay: 0.15 }}
           className='relative flex-shrink-0'>
           <div className='absolute -inset-6 rounded-[28px] bg-gradient-to-br from-accent/30 to-accent-2/20 blur-2xl' />
+
+          {/* floating accent chips around the photo for extra depth */}
+          <div className='hidden sm:flex absolute -top-6 -right-8 z-20 glass-card px-4 py-2.5 items-center gap-2 shadow-glow-sm'>
+            <span className='w-2 h-2 rounded-full bg-accent-2' />
+            <span className='text-white text-[13px] font-medium whitespace-nowrap'>
+              Full-Stack Developer
+            </span>
+          </div>
+
           <Tilt
             className='relative'
             tiltMaxAngleX={12}
@@ -73,6 +109,26 @@ const Landing = () => {
               />
             </div>
           </Tilt>
+
+          {currentRole && (
+            <div className='absolute -bottom-6 -left-8 z-20 glass-card pl-3 pr-4 py-2.5 flex items-center gap-3 shadow-glow-sm'>
+              <div className='w-9 h-9 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden'>
+                <img
+                  src={currentRole.icon}
+                  alt={currentRole.company_name}
+                  className='w-6 h-6 object-contain'
+                />
+              </div>
+              <div>
+                <p className='text-white text-[13px] font-semibold leading-tight'>
+                  Currently @ {currentRole.company_name}
+                </p>
+                <p className='text-secondary text-[11px] leading-tight'>
+                  {currentRole.title}
+                </p>
+              </div>
+            </div>
+          )}
         </motion.div>
       </div>
 
