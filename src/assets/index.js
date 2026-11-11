@@ -6,7 +6,8 @@ import link from "./link.png";
 import logo from "./logo.svg";
 import menu from "./menu.svg";
 import mobile from "./mobile.png";
-import web from "./web.png";
+import tally from "./tally.png";
+import { default as ai, default as web } from "./web.png";
 
 import cert1 from "./certifications/cert1.jpeg";
 import cert2 from "./certifications/cert2.jpeg";
@@ -39,8 +40,11 @@ import twitter from "./twitter.png";
 
 import blogWebsite from "./blogwebsite.png";
 import chatGPTApp from "./chatgptapp.png";
+import claude from "./claude.png";
 import clubapp from "./clubApp.jpg";
+import copilot from "./copilot.png";
 import dapp from "./dapp.png";
+import verbblog from "./verbblog.png";
 import weatherapp from "./weatherapp.png";
 
 import csn from "./schools/csn.svg";
@@ -48,6 +52,7 @@ import queensconvent from "./schools/queensconvent.png";
 import vit from "./schools/vit.svg";
 
 export {
+  ai,
   androidstudio,
   art,
   aws,
@@ -62,8 +67,10 @@ export {
   cert5,
   cert6,
   chatGPTApp,
+  claude,
   close,
   clubapp,
+  copilot,
   csharp,
   csn,
   css,
@@ -86,9 +93,10 @@ export {
   queensconvent,
   reactjs,
   samsung,
+  tally,
   twitter,
-  typescript,
-  vit,
+  typescript, verbblog, vit,
   weatherapp,
-  web,
+  web
 };
+

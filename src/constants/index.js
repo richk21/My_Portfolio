@@ -1,10 +1,9 @@
 import {
+  ai,
   androidstudio,
   art,
   aws,
   azureDO,
-  blogger,
-  blogWebsite,
   bp,
   cert1,
   cert2,
@@ -13,7 +12,9 @@ import {
   cert5,
   cert6,
   chatGPTApp,
+  claude,
   clubapp,
+  copilot,
   csharp,
   csn,
   css,
@@ -26,17 +27,17 @@ import {
   javascript,
   linkedin,
   linux,
-  mobile,
   nodejs,
   python,
   queensconvent,
   reactjs,
-  samsung,
+  tally,
   twitter,
   typescript,
+  verbblog,
   vit,
   weatherapp,
-  web,
+  web
 } from "../assets";
 
 export const navLinks = [
@@ -66,17 +67,17 @@ const services = [
   {
     title: "Full-Stack Developer",
     icon: web,
-    link: "https://github.com/richk21", //put blogging site here
+    link: "https://github.com/richk21/verb",
   },
   {
-    title: "App Developer",
-    icon: mobile,
-    link: "https://github.com/richk21/Chat-App-Kotlin-Firebase",
+    title: "Azure Cloud & DevOps",
+    icon: azureDO,
+    link: "https://www.linkedin.com/in/richa-kiran-9557b8219/",
   },
   {
-    title: "Blogger",
-    icon: blogger,
-    link: "https://algonoob.devdojo.com/",
+    title: "AI-Assisted Developer",
+    icon: ai,
+    link: "https://github.com/richk21",
   },
   {
     title: "Artist",
@@ -85,6 +86,9 @@ const services = [
   },
 ];
 
+// TODO: your resume also lists SQL, Microsoft Azure (App Services, Application
+// Insights), Firebase, Redux, MUI, Jest and Postman. To show them here, add an
+// icon for each to ../assets, import it above, and add an entry below.
 const technologies = [
   {
     name: "React",
@@ -105,6 +109,14 @@ const technologies = [
   {
     name: "Azure DevOps",
     icon: azureDO,
+  },
+  {
+    name: "Claude Code",
+    icon: claude,
+  },
+  {
+    name: "Copilot",
+    icon: copilot,
   },
   {
     name: "HTML",
@@ -154,23 +166,23 @@ const education = [
     location: "Vellore, Tamil Nadu, India",
     points: [
       "Graduated summa cum laude (3.63 GPA / 9.07 CGPA) with coursework spanning algorithms, computer systems, security, cloud, and blockchain.",
-      "Led projects as head of Innovator's Quest club and selected for Samsung PRISM research on energy analytics.",
+      "Lead app developer for Innovator's Quest, VIT's technical club.",
     ],
   },
   {
     school: "Queen's Convent School, Rohini",
-    field: "High School(Grade XII)",
+    field: "Senior Secondary (Grade XII)",
     icon: queensconvent,
     iconBg: "#E6DEDD",
     graddDate: "March 2020",
     location: "Rohini, Delhi, India",
     points: [
-      "Acheived 94.2% in Grade XII, maintaining good academic performance.",
+      "Achieved 94.2% in Grade XII, maintaining good academic performance.",
     ],
   },
   {
     school: "Cambridge School, Noida",
-    field: "Higher Secondary(Grade X)",
+    field: "Secondary (Grade X)",
     icon: csn,
     iconBg: "#E6DEDD",
     graddDate: "March 2018",
@@ -183,17 +195,20 @@ const education = [
 
 const experiences = [
   {
-    title: "Full-Stack Developer",
+    title: "Software Developer (Full-Stack)",
     company_name: "bp",
     icon: bp,
     iconBg: "#E6DEDD",
     date: "July 2024 - Present",
     points: [
-      "Built new front-end features with React & TypeScript.",
-      "Developed C# APIs with event-driven backend architecture for scalable operations.",
-      "Worked with CI/CD pipelines and deployments using Azure DevOps.",
-      "Collaborated with other BP teams to integrate external APIs for some features",
-      "Expanded skillset from front-end development to full-stack engineering during the project.",
+      "Progressed from front-end to full-stack development, building features with React & TypeScript on the front end and C#/.NET on the back end.",
+      "Designed and implemented REST APIs integrated with central database systems.",
+      "Collaborated across teams on Semarchy data-integration initiatives spanning multiple business units.",
+      "Applied software design patterns to build reusable, maintainable components.",
+      "Debugged application failures and exceptions with Azure Monitoring tools such as Application Insights.",
+      "Worked with Azure infrastructure, including App Services deployments and Kudu for diagnostics and troubleshooting.",
+      "Used Git and Azure DevOps (ADO) for version control, CI/CD pipelines, peer code reviews and Agile workflows.",
+      "Use AI coding tools, Claude Code and GitHub Copilot, to speed up development and documentation,  with proper context management and model switching for optimal performance and token usage.",
     ],
   },
   {
@@ -203,45 +218,57 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "May 2023 - June 2023",
     points: [
-      "Worked in project Falcon, a software testing tool made for both technical and non-technical users.",
-      "Created its front end in React and BootStrap CSS.",
-      "Used tools like Postman for API integrations to enable its testing functionalities",
-    ],
-  },
-  {
-    title: "R&D Intern",
-    company_name: "Samsung PRISM",
-    icon: samsung,
-    iconBg: "#E6DEDD",
-    date: "April 2023 - June 2023",
-    points: [
-      "Participated in brainstorming sessions, fostering a supportive research environment.",
-      "Gained exposure to advanced projects and methodologies under experienced mentors.",
+      "Worked on Project Falcon, a software testing tool made for both technical and non-technical users.",
+      "Created its front end in React and Bootstrap CSS.",
+      "Used Postman to integrate with REST APIs and test the tool's functionality.",
     ],
   },
 ];
 
 const projects = [
   {
-    name: "MERN Stack Blogging Website",
+    name: "Verb - Incident Reporting & Review Platform",
     description:
-      "A full-stack MERN blogging platform allowing users to create, read, and comment on blogs with rich features.",
+      "A platform where engineering teams log, review and publish incident reports, with organization-scoped accounts, role-based access (contributor, reviewer, auditor, admin) and a draft-to-publish review workflow. React/TypeScript front end with Redux Toolkit, Redux-Saga and MUI, containerised with Docker and Nginx. Under active development.",
     tags: [
       {
-        name: "MongoDB",
+        name: "ReactJS",
         color: "blue-text-gradient",
       },
       {
-        name: "ReactJS",
+        name: "Redux",
         color: "green-text-gradient",
       },
       {
-        name: "Node.js",
+        name: "Docker",
         color: "pink-text-gradient",
       },
     ],
-    image: blogWebsite,
-    source_code_link: "https://github.com/richk21/MERN-Stack-Blogging-Website",
+    image: verbblog,
+    source_code_link: "https://github.com/richk21/verb",
+    live_demo_link: "https://verbblog.netlify.app/",
+  },
+  {
+    name: "Tally - Liveability Dashboard",
+    description:
+      "A full-stack web app that collects resident survey responses and turns them into interactive dashboards (amenity ratings, living standards, age spread) so people can compare localities before relocating. Built for the KendoReact component competition on dev.to.",
+    tags: [
+      {
+        name: "ReactJS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "KendoReact",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: tally,
+    source_code_link: "https://github.com/richk21/tally-frontend",
+    live_demo_link: "https://tally-survey-app.netlify.app/",
   },
   {
     name: "Brew Notes(DApp)",
@@ -497,5 +524,6 @@ export {
   experiences,
   projects,
   services,
-  technologies,
+  technologies
 };
+
