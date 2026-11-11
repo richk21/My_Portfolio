@@ -7,6 +7,26 @@ import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
+const StatusTag = ({ status }) => {
+  const isActive = status === "active";
+
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border ${
+        isActive
+          ? "bg-accent-2/10 border-accent-2/40 text-accent-2"
+          : "bg-white/5 border-white/10 text-secondary"
+      }`}>
+      <span
+        className={`w-1.5 h-1.5 rounded-full ${
+          isActive ? "bg-accent-2 animate-pulse" : "bg-secondary"
+        }`}
+      />
+      {isActive ? "Active" : "Completed"}
+    </span>
+  );
+};
+
 const ProjectCard = ({
   index,
   name,
@@ -15,6 +35,7 @@ const ProjectCard = ({
   image,
   source_code_link,
   live_demo_link,
+  status,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.4, 0.75)}>
@@ -30,6 +51,12 @@ const ProjectCard = ({
             alt={name}
             className='w-full h-full object-cover rounded-xl'
           />
+
+          {status && (
+            <div className='absolute top-3 left-3'>
+              <StatusTag status={status} />
+            </div>
+          )}
 
           <div className='absolute inset-0 flex justify-end items-start gap-2 m-3'>
             {live_demo_link && (

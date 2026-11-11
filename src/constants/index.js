@@ -228,6 +228,7 @@ const experiences = [
 const projects = [
   {
     name: "Verb - Incident Reporting & Review Platform",
+    status: "active",
     description:
       "A platform where engineering teams log, review and publish incident reports, with organization-scoped accounts, role-based access (contributor, reviewer, auditor, admin) and a draft-to-publish review workflow. React/TypeScript front end with Redux Toolkit, Redux-Saga and MUI, containerised with Docker and Nginx. Under active development.",
     tags: [
@@ -250,6 +251,7 @@ const projects = [
   },
   {
     name: "Tally - Liveability Dashboard",
+    status: "completed",
     description:
       "A full-stack web app that collects resident survey responses and turns them into interactive dashboards (amenity ratings, living standards, age spread) so people can compare localities before relocating. Built for the KendoReact component competition on dev.to.",
     tags: [
@@ -272,6 +274,7 @@ const projects = [
   },
   {
     name: "Brew Notes(DApp)",
+    status: "completed",
     description:
       "Visitors can write a feedback message to me through this decentralized application wherein they will have to first connect their metamask wallet to this website and send their message by confirming the transaction through metamask.",
     tags: [
@@ -293,6 +296,7 @@ const projects = [
   },
   {
     name: "ChatGPT Chat App",
+    status: "completed",
     description:
       "Interactive Chatting Application with ChatGPT for the ease of use of the AI Powered tool from android devices.",
     tags: [
@@ -314,6 +318,7 @@ const projects = [
   },
   {
     name: "React Weather App",
+    status: "completed",
     description:
       "This is an interactive weather app made in react using the Geolocation API and Unsplash API. It uses the geolocation API to fetch weather details of a location and displays an appropriate background image based on the location and its weather.",
     tags: [
@@ -335,6 +340,7 @@ const projects = [
   },
   {
     name: "IQuest IOS App",
+    status: "completed",
     description: "University club portfolio app made in Swift, XCode.",
     tags: [
       {
